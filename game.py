@@ -28,6 +28,9 @@ def excavate():
     if not foundSomething:
         print(f"You got nothing.")
 
+def check_mission():
+    return all(mission.get("found") for mission in missions)
+
 while isRunning:
     adventurer.printPos()
 
@@ -48,3 +51,7 @@ while isRunning:
             adventurer.showInventory()
         case "p":
             isRunning = False
+    
+    if check_mission():
+        print("*** Mission Complete! ***")
+        isRunning = False

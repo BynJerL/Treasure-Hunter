@@ -27,3 +27,8 @@ class Adventurer:
 
     def goSouth(self):
         self.posY += self.speed
+    
+    def showInventory(self):
+        print("Inventory:")
+        for item in self.inventory:
+            print(f"- {item}")

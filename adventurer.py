@@ -1,5 +1,5 @@
 class Adventurer:
-    def __init__(self, name: str, speed: int, initX: int = 0, initY: int = 0, inventory: list = None):
+    def __init__(self, name: str, speed: int = 1, initX: int = 0, initY: int = 0, inventory: list = None):
         self.name = name
         self.speed = speed
         self.posX = initX

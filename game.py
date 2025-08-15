@@ -22,16 +22,16 @@ def excavate():
         hasfound = mission.get("found")
         requirement = mission.get("requirement", None)
 
-        if requirement is not None and not any(item == requirement for item in adventurer.inventory):
-            print(f"Require: {requirement}.")
-            return
-
         if not hasfound and ax == rx and ay == ry:
+            if requirement and requirement not in adventurer.inventory:
+                print(f"Require: {requirement}.")
+                foundSomething = True
+                continue
+
             print(f"You found {finding}!")
             foundSomething = True
             mission["found"] = True
             adventurer.inventory.append(finding)
-            return
         
     if not foundSomething:
         print(f"You got nothing.")
